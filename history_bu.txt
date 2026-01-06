@@ -1,0 +1,255 @@
+   1  sudo apt install code
+    2  ls
+    3  cd meeting-minutes/
+    4  cd ls
+    5  cd
+    6  cd Projekte/meeting-minutes/
+    7  ls
+    8  ls
+    9  cd backend/
+   10  ls
+   11  build-docker.sh
+   12  run-docker.sh
+   13  run-docker
+   14  build-docker
+   15  .\build-docker.ps1 gpu
+   16  ls
+   17  sudo apt update
+   18  sudo apt install -y powershell
+   19  # Verify ARM64 architecture
+   20  uname -m
+   21  # Expected output: aarch64
+   22  # Check available disk space (VS Code requires ~200MB)
+   23  df -h /
+   24  # Verify desktop environment is running
+   25  ps aux | grep -E "(gnome|kde|xfce)"
+   26  # Verify GUI desktop environment is available
+   27  # Should return display information like :0 or :10.0
+   28  wget https://code.visualstudio.com/sha/download?build=stable\&os=linux-deb-arm64 -O vscode-arm64.deb
+   29  # Install the downloaded .deb package
+   30  sudo dpkg -i vscode-arm64.deb
+   31  # Fix any dependency issues if they occur
+   32  sudo apt-get install -f
+   33  # Check if VS Code is installed
+   34  which code
+   35  # Verify version
+   36  code --version
+   37  # Test launch (will open VS Code GUI)
+   38  code &
+   39  ###################################
+   40  # Prerequisites
+   41  # Update the list of packages
+   42  sudo apt-get update
+   43  # Install pre-requisite packages.
+   44  sudo apt-get install -y wget apt-transport-https software-properties-common
+   45  # Get the version of Ubuntu
+   46  source /etc/os-release
+   47  # Download the Microsoft repository keys
+   48  wget -q https://packages.microsoft.com/config/ubuntu/$VERSION_ID/packages-microsoft-prod.deb
+   49  # Register the Microsoft repository keys
+   50  sudo dpkg -i packages-microsoft-prod.deb
+   51  # Delete the Microsoft repository keys file
+   52  rm packages-microsoft-prod.deb
+   53  # Update the list of packages after we added packages.microsoft.com
+   54  sudo apt-get update
+   55  ###################################
+   56  # Install PowerShell
+   57  sudo apt-get install -y powershell
+   58  # Start PowerShell
+   59  pwsh
+   60  sudo snap install powershell
+   61  sudo snap install powershell --classic
+   62  ./build-docker.ps1 gpu
+   63  ./build-docker.ps1
+   64  pwsh
+   65  pwsh build-docker.ps1 gpu
+   66  bash --help
+   67  bash build-docker.sh gpu
+   68  sudo bash build-docker.sh gpu
+   69  sudo bash run-docker.sh start --interactive
+   70  sudo bash run-docker.sh start
+   71  sudo bash download-ggml-model.sh 
+   72  small
+   73  sudo bash download-ggml-model.sh small
+   74  ./build/bin/whisper-cli -m /home/asp_dgx/Projekte/meeting-minutes/backend/ggml-small.bin -f samples/jfk.wav~
+   75  sudo bash run-docker.sh start --interactive
+   76  cd..
+   77  cd ..
+   78  cargo build
+   79  bash run-docker.sh start --interactive
+   80  cd backend/
+   81  bash run-docker.sh start --interactive
+   82  sudo bash run-docker.sh start --interactive
+   83  sudo bash run-docker.sh logs -Service whisper -Follow
+   84  nvidia-smi
+   85  nvcc --version
+   86  sudo apt-get install -y nvidia-container-toolkit
+   87  cd ./backend/
+   88  ./build-docker.ps1 gpu
+   89  ./build-docker.ps1
+   90  '/home/asp_dgx/Projekte/meeting-minutes/backend/build-docker.ps1'
+   91  '/home/asp_dgx/Projekte/meeting-minutes/backend/build-docker.ps1' "gpu"
+   92  '/home/asp_dgx/Projekte/meeting-minutes/backend/build-docker.ps1' h
+   93  '/home/asp_dgx/Projekte/meeting-minutes/backend/build-docker.ps1' -h
+   94  pwsh
+   95  clear
+   96  pwsh ./build-docker.ps1 gpu
+   97  ./build-docker.ps1 gpu
+   98  bash
+   99  cd ./backend/
+  100  bash ./run-docker.sh start
+  101  sudo bash ./run-docker.sh start
+  102  sudo bash ./run-docker.sh logs --service whisper --follow
+  103  sudo bash ./build-docker.sh gpu --build-args "CUDA_VERSION=13.0"
+  104  sudo bash ./build-docker.sh gpu --build-args "CUDA_VERSION=13.0.0"
+  105  '/home/asp_dgx/Projekte/meeting-minutes/frontend/dev-gpu.bat'
+  106  sudo apt install build-essential cmake git
+  107  nvidia-smi
+  108  cat /usr/local/cuda/version.txt
+  109  nvcc --version
+  110  nvidia-ctk
+  111  nvidia-container-cli
+  112  sudo '/home/asp_dgx/Projekte/meeting-minutes/frontend/dev-gpu.bat'
+  113  sudo bash '/home/asp_dgx/Projekte/meeting-minutes/frontend/dev-gpu.bat'
+  114  cd ./frontend/
+  115  sudo bash build-gpu.sh 
+  116  cd ..
+  117  cd ./backend/
+  118  sudo bash ./build_whisper.sh 
+  119  sudo bash ./build-docker.sh gpu
+  120  sudo bash ./run-docker.sh start --interactive
+  121  sudo bash ./run-docker.sh logs --service whisper --follow
+  122  sudo bash ./build-docker.sh gpu
+  123  cd ..
+  124  cd ./frontend/
+  125  sudo bash clean-build.sh
+  126  sudo bash ./clean_build.sh 
+  127  cmake
+  128  cmake --version
+  129  # ...existing code...
+  130  else
+  131  fi
+  132  # ...existing code...
+  133  sudo apt install cmake
+  134  cd ..
+  135  cd ./backend/
+  136  sudo bash ./build-docker.sh gpu
+  137  nvidia-smi
+  138  cat /usr/local/cuda/version.txt
+  139  sudo bash ./build-docker.sh gpu
+  140  nvidia-smi
+  141  nvcii
+  142  nvcc --version
+  143  docker ps
+  144  sudo docker ps
+  145  sudo usermod -aG docker $USER
+  146  newgrp docker
+  147  docker ps
+  148  docker pull ghcr.io/open-webui/open-webui:ollama
+  149  docker run -d -p 8080:8080 --gpus=all   -v open-webui:/app/backend/data   -v open-webui-ollama:/root/.ollama   --name open-webui ghcr.io/open-webui/open-webui:ollama
+  150  docker ps
+  151  docker run -it --name ollama-container ollama
+  152  docker ps
+  153  docker exec -it 56cd5d70cb1a /bin/bash
+  154  docker stop 56cd5d70cb1a
+  155  docker run 56cd5d70cb1a
+  156  docker start 56cd5d70cb1a
+  157  docker exec -it 56cd5d70cb1a /bin/bash
+  158  python3 -m venv venv
+  159  source venv/bin/activate
+  160  pip install whisperx
+  161  python3 --version
+  162  source /home/asp_dgx/Projekte/whisperX_use/venv/bin/activate
+  163  source /home/asp_dgx/Projekte/whisperX_use/venv/bin/activate
+  164  /home/asp_dgx/Projekte/whisperX_use/venv/bin/python /home/asp_dgx/Projekte/whisperX_use/example.py
+  165  pip uninstall torch torchaudio torchvision -y
+  166  pip list
+  167  pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu130
+  168  /home/asp_dgx/Projekte/spark-voice-pipeline/.venv/bin/python~
+  169  .venv/bin/python
+  170  pip uninstall torch torchaudio torchvision -y
+  171  python3 --version
+  172  pip list
+  173  pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu130
+  174  /home/asp_dgx/Projekte/spark-voice-pipeline/.venv/bin/python /home/asp_dgx/Projekte/spark-voice-pipeline/voice_chat_client_streaming.py
+  175  source /home/asp_dgx/Projekte/spark-voice-pipeline/.venv/bin/activate
+  176  /home/asp_dgx/Projekte/spark-voice-pipeline/.venv/bin/python /home/asp_dgx/Projekte/spark-voice-pipeline/voice_chat_streaming.py
+  177  /home/asp_dgx/Projekte/spark-voice-pipeline/.venv/bin/python /home/asp_dgx/Projekte/spark-voice-pipeline/vibevoice_streaming_server.py
+  178  pip install websockets sounddevice numpy
+  179  /home/asp_dgx/Projekte/spark-voice-pipeline/.venv/bin/python /home/asp_dgx/Projekte/spark-voice-pipeline/voice_chat_client_streaming.py
+  180  sudo apt-get install libportaudio2
+  181  pip install sounddevice --force-reinstall
+  182  /home/asp_dgx/Projekte/spark-voice-pipeline/.venv/bin/python /home/asp_dgx/Projekte/spark-voice-pipeline/voice_chat_client_streaming.py
+  183  source /home/asp_dgx/Projekte/spark-voice-pipeline/.venv/bin/activate
+  184  sh ./models/download-ggml-model.sh base.en
+  185  /build/bin/whisper-cli -m /home/asp_dgx/Projekte/whisper.cpp/models/ggml-base.en.bin -f samples/jfk.wav
+  186  cmake -B build
+  187  /build/bin/whisper-cli -m /home/asp_dgx/Projekte/whisper.cpp/models/ggml-base.en.bin -f samples/jfk.wav
+  188  ./build/bin/whisper-cli -m /home/asp_dgx/Projekte/whisper.cpp/models/ggml-base.en.bin -f samples/jfk.wav
+  189  200~cmake -B build -DGGML_CUDA=1
+  190  cmake -B build -DGGML_CUDA=1
+  191  cmake --build build -j --config Release
+  192  ./build/bin/whisper-cli -m /home/asp_dgx/Projekte/whisper.cpp/models/ggml-base.en.bin -f samples/jfk.wav
+  193  ./models/download-ggml-model.sh 
+  194  ./models/download-ggml-model.sh large-v3
+  195  source /home/asp_dgx/Projekte/spark-voice-pipeline/.venv/bin/activate
+  196  ./models/download-ggml-model.sh medium
+  197  ./models/download-ggml-model.sh large-v3
+  198  ./models/download-ggml-model.sh 
+  199  ./models/download-ggml-model.sh medium
+  200  ./models/download-ggml-model.sh large-v3-turbo
+  201  ./whisper-server -m models/ggml-large-v3-turbo --host 0.0.0.0 --port 8025
+  202  ./build/bin/whisper-server -m models/ggml-large-v3-turbo --host 0.0.0.0 --port 8025
+  203  ./build/bin/whisper-server -m models/ggml-large-v3-turbo.bin --host 0.0.0.0 --port 8025
+  204  source /home/asp_dgx/Projekte/spark-voice-pipeline/.venv/bin/activate
+  205  curl 127.0.0.1:8080/inference   -H "Content-Type: multipart/form-data"   -F file=@./samples/jfk.wav   -F response-format="json" | jq
+  206  curl 0.0.0.0:8025/inference -H "Content-Type: multipart/form-data" -F file=@./output.wav -F response-format="json" | jq
+  207  ./build/bin/whisper-server -m models/ggml-large-v3-turbo.bin --host 0.0.0.0 --port 8025
+  208  /home/asp_dgx/Projekte/spark-voice-pipeline/.venv/bin/python /home/asp_dgx/Projekte/spark-voice-pipeline/voice_chat_client_streaming_nur_aufnahme.py
+  209  source /home/asp_dgx/Projekte/spark-voice-pipeline/.venv/bin/activate
+  210  /home/asp_dgx/Projekte/spark-voice-pipeline/.venv/bin/python /home/asp_dgx/Projekte/spark-voice-pipeline/voice_chat_client_streaming_nur_aufnahme.py
+  211  curl 0.0.0.0:8025/inference -H "Content-Type: multipart/form-data" -F file=@./output.wav -F response-format="json" | jq
+  212  /home/asp_dgx/Projekte/spark-voice-pipeline/.venv/bin/python /home/asp_dgx/Projekte/spark-voice-pipeline/voice_chat_client_streaming.py
+  213  source /home/asp_dgx/Projekte/spark-voice-pipeline/.venv/bin/activate
+  214  /home/asp_dgx/Projekte/spark-voice-pipeline/.venv/bin/python /home/asp_dgx/Projekte/spark-voice-pipeline/voice_chat_client_streaming.py
+  215  /home/asp_dgx/Projekte/spark-voice-pipeline/.venv/bin/python "/home/asp_dgx/Projekte/spark-voice-pipeline/voice_chat_streaming copy.py"
+  216  source /home/asp_dgx/Projekte/spark-voice-pipeline/.venv/bin/activate
+  217  /home/asp_dgx/Projekte/spark-voice-pipeline/.venv/bin/python "/home/asp_dgx/Projekte/spark-voice-pipeline/voice_chat_streaming copy.py"
+  218  /home/asp_dgx/Projekte/spark-voice-pipeline/.venv/bin/python /home/asp_dgx/Projekte/spark-voice-pipeline/voice_chat_streaming.py
+  219  /home/asp_dgx/Projekte/spark-voice-pipeline/.venv/bin/python /home/asp_dgx/Projekte/spark-voice-pipeline/voice_chat_client_streaming.py
+  220  source /home/asp_dgx/Projekte/spark-voice-pipeline/.venv/bin/activate
+  221  curl 0.0.0.0:8025/inference -H "Content-Type: multipart/form-data" -F file=@./output.wav -F response-format="json" | jq
+  222  source /home/asp_dgx/Projekte/spark-voice-pipeline/.venv/bin/activate
+  223  /home/asp_dgx/Projekte/spark-voice-pipeline/.venv/bin/python /home/asp_dgx/Projekte/spark-voice-pipeline/voice_chat_client_streaming.py
+  224  /home/asp_dgx/Projekte/spark-voice-pipeline/.venv/bin/python /home/asp_dgx/Projekte/spark-voice-pipeline/voice_chat_streaming.py
+  225  source /home/asp_dgx/Projekte/spark-voice-pipeline/.venv/bin/activate
+  226  /home/asp_dgx/Projekte/spark-voice-pipeline/.venv/bin/python /home/asp_dgx/Projekte/spark-voice-pipeline/voice_chat_streaming.py
+  227  source /home/asp_dgx/Projekte/spark-voice-pipeline/.venv/bin/activate
+  228  /home/asp_dgx/Projekte/spark-voice-pipeline/.venv/bin/python /home/asp_dgx/Projekte/spark-voice-pipeline/voice_chat_streaming.py
+  229  source /home/asp_dgx/Projekte/spark-voice-pipeline/.venv/bin/activate
+  230  /home/asp_dgx/Projekte/client/venv/bin/python /home/asp_dgx/Projekte/client/voice_chat_client_streaming.py
+  231  /home/asp_dgx/Projekte/spark-voice-pipeline/.venv/bin/python /home/asp_dgx/Projekte/spark-voice-pipeline/voice_chat_streaming.py
+  232  source /home/asp_dgx/Projekte/spark-voice-pipeline/.venv/bin/activate
+  233  source /home/asp_dgx/Projekte/spark-voice-pipeline/.venv/bin/activate
+  234  /home/asp_dgx/Projekte/client/venv/bin/python /home/asp_dgx/Projekte/client/voice_chat_client_streaming.py
+  235  python3 -m venv venv
+  236  source venv/bin/activate
+  237  pip install -r '/home/asp_dgx/Projekte/client/requirements.txt'
+  238  source /home/asp_dgx/Projekte/client/venv/bin/activate
+  239  source /home/asp_dgx/Projekte/client/venv/bin/activate
+  240  /home/asp_dgx/Projekte/client/venv/bin/python /home/asp_dgx/Projekte/client/voice_chat_client_streaming.py
+  241  ./build/bin/whisper-server --help
+  242  ./build/bin/whisper-server -m models/ggml-large-v3-turbo.bin --host 0.0.0.0 --port 8025 -l auto
+  243  /home/asp_dgx/Projekte/spark-voice-pipeline/.venv/bin/python /home/asp_dgx/Projekte/spark-voice-pipeline/voice_chat_streaming.py
+  244  source /home/asp_dgx/Projekte/spark-voice-pipeline/.venv/bin/activate
+  245  /home/asp_dgx/Projekte/spark-voice-pipeline/.venv/bin/python /home/asp_dgx/Projekte/spark-voice-pipeline/voice_chat_streaming.py
+  246  source /home/asp_dgx/Projekte/spark-voice-pipeline/.venv/bin/activate
+  247  git remote remove origin
+  248  git status
+  249  git remote add origin https://github.com/HekaAsp/spark-voice-pipeline.git
+  250  git add .
+  251  git commit -m "Initial commit"
+  252  git config --global user.email asp@hekatron.de
+  253  git config --global user.name asp
+  254  git commit -m "Initial commit"
+  255  history
