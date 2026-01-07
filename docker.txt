@@ -1,0 +1,135 @@
+automatisch starten 
+
+docker update --restart unless-stopped open-webui 
+docker start open-webui
+
+
+server starten 
+
+docker run -d \
+  --name ollama \
+  --restart unless-stopped \
+  --gpus all \
+  -p 11434:11434 \
+  -v ollama:/root/.ollama \
+  ollama/ollama
+
+docker update --restart unless-stopped ollama
+docker start ollama
+
+bridge anlegen 
+docker network create ai
+
+web ui starten
+docker run -d \
+  --name open-webui \
+  --network ai \
+  --restart unless-stopped \
+  -p 3000:8080 \
+  -e OLLAMA_BASE_URL=http://ollama:11434 \
+  -e OLLAMA_MODEL=deepseek-r1:1.5b \
+  ghcr.io/open-webui/open-webui:ollama
+---------------------------------------------------------
+prüfen ob web ui ollama-server findet 
+docker exec -it open-webui2 curl http://ollama:11434/api/tags
+
+---
+docker network inspect ai
+---> sollten sich sehen !!!!
+asp_dgx@spark-426c:/var/lib$ docker network inspect ai
+[
+    {
+        "Name": "ai",
+        "Id": "668447a9dec92768a77683e6a9399ffd7064f1efa698f6443c593ff094d4c09d",
+        "Created": "2026-01-07T13:34:42.876321048+01:00",
+        "Scope": "local",
+        "Driver": "bridge",
+        "EnableIPv4": true,
+        "EnableIPv6": false,
+        "IPAM": {
+            "Driver": "default",
+            "Options": {},
+            "Config": [
+                {
+                    "Subnet": "172.19.0.0/16",
+                    "Gateway": "172.19.0.1"
+                }
+            ]
+        },
+        "Internal": false,
+        "Attachable": false,
+        "Ingress": false,
+        "ConfigFrom": {
+            "Network": ""
+        },
+        "ConfigOnly": false,
+        "Containers": {
+            "5df69ea0c59309fad4b784bdac814ed3030958ff03eb0a209680b85746d19d79": {
+                "Name": "open-webui2",
+                "EndpointID": "73cfaf6f4ee5b65936d1538098d7cb752a503f166242818ee6cee756be28a460",
+                "MacAddress": "d2:5b:1a:63:ee:d5",
+                "IPv4Address": "172.19.0.2/16",
+                "IPv6Address": ""
+            },
+            "a4ba2ecdb517424fee3284f024572f0f3a528915627af52a4db2489bc24458c6": {
+                "Name": "ollama",
+                "EndpointID": "9f6ba3afcd66ad145e3f7d5106df022fab5c68620c3103026065aaa651fb63a6",
+                "MacAddress": "ee:49:3c:90:38:35",
+                "IPv4Address": "172.19.0.3/16",
+                "IPv6Address": ""
+            }
+        },
+        "Options": {},
+        "Labels": {}
+    }
+]
+
+  
+
+-------------------------------------------
+
+modell runterladen
+docker exec -it ollama ollama pull deepseek-r1:1.5b
+
+-------------------------------------------
+Lokale Modelle anzeigen
+docker exec -it ollama ollama list
+docker exec -it open-webui ollama list
+
+-------------------------------------------
+modelle abzufragen
+curl http://localhost:11434/api/tags
+---------------------------------------
+model löschen
+
+docker exec -it open-webui bash
+ollama rm deepseek-r1:1.5b
+
+
+
+asp_dgx@spark-426c:/var/lib$ docker volume inspect ollama
+[
+    {
+        "CreatedAt": "2026-01-07T12:55:27+01:00",
+        "Driver": "local",
+        "Labels": null,
+        "Mountpoint": "/var/lib/docker/volumes/ollama/_data",
+        "Name": "ollama",
+        "Options": null,
+        "Scope": "local"
+    }
+]
+asp_dgx@spark-426c:/var/lib$ docker volume inspect open-webui
+[
+    {
+        "CreatedAt": "2026-01-03T06:56:22+01:00",
+        "Driver": "local",
+        "Labels": null,
+        "Mountpoint": "/var/lib/docker/volumes/open-webui/_data",
+        "Name": "open-webui",
+        "Options": null,
+        "Scope": "local"
+    }
+]
+----------------------------------
+
