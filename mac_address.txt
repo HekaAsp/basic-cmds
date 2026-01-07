@@ -1,7 +1,1 @@
-enP7s7: <NO-CARRIER,BROADCAST,MULTICAST,UP>
-    link/ether 4c:bb:47:2f:42:6d
-
-wlP9s9: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP mode DORMANT group default qlen 1000
-    link/ether 58:02:05:f5:c0:ed brd ff:ff:ff:ff:ff:ff
-    altname wlP9p1s0
 
