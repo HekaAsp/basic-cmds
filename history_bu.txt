@@ -253,3 +253,194 @@
   253  git config --global user.name asp
   254  git commit -m "Initial commit"
   255  history
+
+226  /home/asp_dgx/Projekte/spark-voice-pipeline/.venv/bin/python /home/asp_dgx/Projekte/spark-voice-pipeline/voice_chat_streaming.py
+  227  source /home/asp_dgx/Projekte/spark-voice-pipeline/.venv/bin/activate
+  228  /home/asp_dgx/Projekte/spark-voice-pipeline/.venv/bin/python /home/asp_dgx/Projekte/spark-voice-pipeline/voice_chat_streaming.py
+  229  source /home/asp_dgx/Projekte/spark-voice-pipeline/.venv/bin/activate
+  230  /home/asp_dgx/Projekte/client/venv/bin/python /home/asp_dgx/Projekte/client/voice_chat_client_streaming.py
+  231  /home/asp_dgx/Projekte/spark-voice-pipeline/.venv/bin/python /home/asp_dgx/Projekte/spark-voice-pipeline/voice_chat_streaming.py
+  232  source /home/asp_dgx/Projekte/spark-voice-pipeline/.venv/bin/activate
+  233  source /home/asp_dgx/Projekte/spark-voice-pipeline/.venv/bin/activate
+  234  /home/asp_dgx/Projekte/client/venv/bin/python /home/asp_dgx/Projekte/client/voice_chat_client_streaming.py
+  235  python3 -m venv venv
+  236  source venv/bin/activate
+  237  pip install -r '/home/asp_dgx/Projekte/client/requirements.txt'
+  238  source /home/asp_dgx/Projekte/client/venv/bin/activate
+  239  source /home/asp_dgx/Projekte/client/venv/bin/activate
+  240  /home/asp_dgx/Projekte/client/venv/bin/python /home/asp_dgx/Projekte/client/voice_chat_client_streaming.py
+  241  ./build/bin/whisper-server --help
+  242  ./build/bin/whisper-server -m models/ggml-large-v3-turbo.bin --host 0.0.0.0 --port 8025 -l auto
+  243  /home/asp_dgx/Projekte/spark-voice-pipeline/.venv/bin/python /home/asp_dgx/Projekte/spark-voice-pipeline/voice_chat_streaming.py
+  244  source /home/asp_dgx/Projekte/spark-voice-pipeline/.venv/bin/activate
+  245  /home/asp_dgx/Projekte/spark-voice-pipeline/.venv/bin/python /home/asp_dgx/Projekte/spark-voice-pipeline/voice_chat_streaming.py
+  246  source /home/asp_dgx/Projekte/spark-voice-pipeline/.venv/bin/activate
+  247  git remote remove origin
+  248  git status
+  249  git remote add origin https://github.com/HekaAsp/spark-voice-pipeline.git
+  250  git add .
+  251  git commit -m "Initial commit"
+  252  git config --global user.email asp@hekatron.de
+  253  git config --global user.name asp
+  254  git commit -m "Initial commit"
+  255  history
+  256  source /home/asp_dgx/Projekte/client/venv/bin/activate
+  257  docker ps
+  258  ip link
+  259  ifconfig
+  260  docker ps
+  261  docker stop 8229eedeab0f
+  262  docker stop ec591accf44b
+  263  docker ps
+  264  ifconfig
+  265  ip link show
+  266  docker ps
+  267  docker ps -a --format "table {{.Names}}\t{{.Image}}\t{{.Status}}\t{{.RestartPolicy}}"
+  268  docker ps -a --filter "restart-policy=always"              --filter "restart-policy=unless-stopped"
+  269  docker image ls
+  270  docker start ollama
+  271  docke start e8a92371a195
+  272  docke run e8a92371a195
+  273  docker ps -a
+  274  docke start open-webui
+  275  docker start open-webui
+  276  docker ps
+  277  hostnam -I
+  278  hostname -I
+  279  docker update --restart unless-stopped open-webui
+  280  docker start open-webui
+  281  docker run -d   --name ollama   --restart unless-stopped   -p 11434:11434   -v ollama:/root/.ollama   ollama/ollama
+  282  docker ps
+  283  docker stop open-webui
+  284  docker run -d   --name open-webui   --restart unless-stopped   -p 3000:8080   -e OLLAMA_BASE_URL=http://ollama:11434   --link ollama   ghcr.io/open-webui/open-webui:ollama
+  285  docker run -d   --name open-webui2   --restart unless-stopped   -p 3000:8080   -e OLLAMA_BASE_URL=http://ollama:11434   --link ollama   ghcr.io/open-webui/open-webui:ollama
+  286  docker r   --restart unless-stopped   -p 3000:8080   -e OLLAMA_BASE_URL=http://ollama:11434   --link ollama   ghcr.io/open-webui/open-webui:ollama
+  287  docker run -d   --name ollama   --restart unless-stopped   --gpus all   -p 11434:11434   -v ollama:/root/.ollama   ollama/ollama
+  288  docker ps
+  289  curl http://localhost:11434/api/tags
+  290  curl http://localhost:11434/api/models
+  291  docker ps
+  292  docker exec -it ollama ollama pull deepseek-r1:1.5b
+  293  docker exec -it ollama ollama list
+  294  docker ps -a
+  295  docker update --restart unless-stopped ollama
+  296  docker start ollama
+  297  docker ps image ls
+  298  docker ps image -ls
+  299  docker image -ls
+  300  docker image ls
+  301  ls
+  302  docker volume inspect ollama
+  303  cd /var/lib/docker/volumes/ollama/
+  304  sudo cd /var/lib/docker/volumes/ollama/
+  305  ls
+  306  cd Bilder/
+  307  cd ..
+  308  ls
+  309  cd var
+  310  ls
+  311  cd lib/docker/
+  312  ls
+  313  cd lib/
+  314  ls
+  315  sudo cd docker/
+  316  docker image -ls
+  317  docker exec -it ollama ollama list
+  318  docker exec -it ollama open-webui list
+  319  docker exec -it open-webui open-webui list
+  320  docker ps
+  321  docker image ls
+  322  docker start e8a92371a195
+  323  docker start open-webui
+  324  docker exec -it open-webui open-webui list
+  325  docker exec -it open-webui ollama list
+  326  docker exec -it open-webui bash
+  327  docker volume inspect ollama
+  328  docker volume inspect open-webui
+  329  docker exec -it open-webui bash
+  330  docker exec -it ollama bash
+  331  docker exec -it open-webui bash
+  332  docker update --restart unless-stopped ollama open-webui
+  333  docker exec -it ollama ollama list
+  334  docker run -d   --name open-webui   --network ai   --restart unless-stopped   -p 3000:8080   -e OLLAMA_BASE_URL=http://ollama:11434   -e OLLAMA_MODEL=llama3   ghcr.io/open-webui/open-webui:ollama
+  335  docker ps
+  336  docker stop open-webui
+  337  docker run -d   --name open-webui   --network ai   --restart unless-stopped   -p 3000:8080   -e OLLAMA_BASE_URL=http://ollama:11434   -e OLLAMA_MODEL=llama3   ghcr.io/open-webui/open-webui:ollama
+  338  docker run -d   --name open-webui   --network ai   --restart unless-stopped   -p 3000:8080   -e OLLAMA_BASE_URL=http://ollama:11434   -e OLLAMA_MODEL=deepseek-r1:1.5b   ghcr.io/open-webui/open-webui:ollama
+  339  docker image ls
+  340  docker update --restart unless-stopped open-webui
+  341  docker start open-webui
+  342  docker stop open-webui
+  343  docker rm open-webui
+  344  docker run -d   --name open-webui   --network ai   --restart unless-stopped   -p 3000:8080   -e OLLAMA_BASE_URL=http://ollama:11434   -e OLLAMA_MODEL=deepseek-r1:1.5b   ghcr.io/open-webui/open-webui:ollama
+  345  docker network create ai
+  346  docker network ls
+  347  docker run -d   --name open-webui   --network ai   --restart unless-stopped   -p 3000:8080   -e OLLAMA_BASE_URL=http://ollama:11434   -e OLLAMA_MODEL=deepseek-r1:1.5b   ghcr.io/open-webui/open-webui:ollama
+  348  docker ps
+  349  docker run -d   --name open-webui   --network ai   --restart unless-stopped   -p 3000:8080   -e OLLAMA_BASE_URL=http://ollama:11434   -e OLLAMA_MODEL=deepseek-r1:1.5b   ghcr.io/open-webui/open-webui:ollama
+  350  docker image ls
+  351  docker ps
+  352  docker run -d   --name open-webui   --network ai   --restart unless-stopped   -p 3000:8080   -e OLLAMA_BASE_URL=http://ollama:11434   -e OLLAMA_MODEL=deepseek-r1:1.5b   ghcr.io/open-webui/open-webui:ollama
+  353  ~
+  354  docker run -d   --name open-webui   --network ai   --restart unless-stopped   -p 3000:8080   -e OLLAMA_BASE_URL=http://ollama:11434   -e OLLAMA_MODEL=deepseek-r1:1.5b   ghcr.io/open-webui/open-webui:ollama
+  355  ~docker run -d   --name open-webui   --network ai   --restart unless-stopped   -p 3000:8080   -e OLLAMA_BASE_URL=http://ollama:11434   -e OLLAMA_MODEL=deepseek-r1:1.5b   ghcr.io/open-webui/open-webui:ollama
+  356  docker run -d   --name open-webui   --network ai   --restart unless-stopped   -p 3000:8080   -e OLLAMA_BASE_URL=http://ollama:11434   -e OLLAMA_MODEL=deepseek-r1:1.5b   ghcr.io/open-webui/open-webui:ollama
+  357  docker run -d   --name open-webui2   --network ai   --restart unless-stopped   -p 3000:8080   -e OLLAMA_BASE_URL=http://ollama:11434   -e OLLAMA_MODEL=deepseek-r1:1.5b   ghcr.io/open-webui/open-webui:ollama
+  358  docker ps
+  359  docker exec -it ollama ollama list
+  360  docker exec -it open-webui2 curl http://ollama:11434/api/models
+  361  docker network inspect ai
+  362  docker network connect ai ollama
+  363  docker network inspect ai
+  364  docker exec -it open-webui2 curl http://ollama:11434/api/models
+  365  docker exec -it open-webui2 curl http://ollama:11434/api/tags
+  366  docker ps
+  367  ls
+  368  docker ps
+  369  exit
+  370  docker exec -it ollama ollama pull deepseek-r1:1.5b
+  371  docker exec -it ollama ollama pull deepseek-r1:8b
+  372  ping registry.ollama.ai
+  373  nslookup registry.ollama.ai
+  374  docker exec -it ollama sh
+  375  nslookup registry.ollama.ai
+  376  ping -c 1 registry.ollama.ai
+  377  docker ps
+  378  docker exec -it ollama cat /etc/resolv.conf
+  379  sudo mkdir -p /etc/docker
+  380  sudo nano /etc/docker/daemon.json
+  381  sudo systemctl restart docker
+  382  docker restart ollama
+  383  docker exec -it ollama nslookup registry.ollama.ai
+  384  docker exec -it ollama ollama pull deepseek-r1:8b
+  385  docker exec -it ollama ollama pull gpt-oss:120b
+  386  docker exec -it ollama tmux
+  387  ollama pull gpt-oss:120b
+  388  docker exec -it ollama tmux
+  389  docker exec -it ollama tmux ollama pull gpt-oss:120b
+  390  docker exec -i ollama nohup ollama pull gpt-oss:120b > /tmp/pull.log 2>&1 &
+  391  docker exec -it ollama tail -f /tmp/pull.log
+  392  docker exec -it ollama tmux new -s gptpull
+  393  docker exec -d ollama ollama pull gpt-oss:120b
+  394  docker logs -f ollama
+  395  docker logs --tail 50 ollama
+  396  docker exec ollama ps aux | grep ollama
+  397  docker logs --tail 50 ollama
+  398  docker exec ollama ps aux | grep ollama
+  399  sudo shutdown -h now
+  400  docker exec ollama ps aux | grep ollama
+  401  sudo shutdown -h now
+  402  docker logs --tail 50 ollama
+  403  docker exec
+  404  docker exec ollama ps aux | grep ollama
+  405  docker logs --tail 50 ollama
+  406  docker exec ollama ps aux | grep ollama
+  407  docker exec ollama kill 136 163
+  408  docker exec ollama ps aux | grep ollama
+  409  sudo shutdown -h now
+  410  docker ps
+  411  docker logs --tail 50 ollama
+  412  docker exec -d ollama ollama pull gpt-oss:120b
+  413  docker logs --tail 50 ollama
+  414  docker exec ollama ps aux | grep ollama
+  415  docker logs --tail 50 ollama
