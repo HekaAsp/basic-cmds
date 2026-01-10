@@ -132,4 +132,18 @@ asp_dgx@spark-426c:/var/lib$ docker volume inspect open-webui
     }
 ]
 ----------------------------------
+Get-NetNeighbor -AddressFamily IPv4 | Where-Object {$_.LinkLayerAddress -match "58-02-05"}
+ssh -L 11000:localhost:11000 asp_dgx@192.168.178.84
+
+modell per ssh laden und terminal schließen
+
+docker exec -d ollama ollama pull gpt-oss:120b
+
+prozesse anzeigen
+docker exec ollama ps aux | grep ollama
+docker exec ollama kill 136 163
+
+docker logs --tail 50 ollama
+
+sudo shutdown -h now
 
