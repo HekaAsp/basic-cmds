@@ -145,5 +145,10 @@ docker exec ollama kill 136 163
 
 docker logs --tail 50 ollama
 
+
+---------------------------------
+benutzer löschen
+docker exec -it open-webui2 rm /app/backend/data/webui.db
+
 sudo shutdown -h now
 
