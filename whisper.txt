@@ -1,1 +1,13 @@
 curl 0.0.0.0:8025/inference -H "Content-Type: multipart/form-data" -F file=@./output.wav -F response-format="json" | jq
+
+Windows
+
+starten 
+.\build\bin\Release\whisper-server.exe -m .\ggml-large-v3.bin
+
+testen
+curl http://localhost:8080/
+
+transripten
+curl.exe -X POST http://localhost:8080/inference `
+>>   -F "file=@audio.wav"
