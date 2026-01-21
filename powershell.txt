@@ -1,0 +1,2 @@
+Um die history auszugeben
+"$env:APPDATA\Microsoft\Windows\PowerShell\PSReadline\ConsoleHost_history.txt" | Out-File "C:\D\deiner_history.txt
